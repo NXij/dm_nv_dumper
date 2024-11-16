@@ -21,6 +21,9 @@ Requires pyusb `pip install pyusb`
 Run the script
 `./nv_dump2.py`
 
+> [!IMPORTANT]
+> If you see the counter stall or go above the nv item count, exit the script using Ctrl-C and retry running the script till it works
+
 ## Is there a better way to view the json output?
 I have written a little page for this. 
 
