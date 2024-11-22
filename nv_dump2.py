@@ -7,7 +7,6 @@ import json
 import binascii
 import csv
 import subprocess
-import time
 import re
 
 dev_id = (0x04e8,0x6862) # DM usb device id
@@ -303,4 +302,14 @@ def main() -> None:
     continuous_read()
 
 if __name__ == "__main__":
-    sys.exit(main())
+    try:
+        main()
+    except Exception as e:
+        print(f"An error occured: {e}")
+
+    try:
+        send_dm_message(DMCmdOut.STOP)
+    except Exception:
+        pass
+
+    sys.exit()
